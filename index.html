@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body{
+    margin:0px;
+}
+.Main{
+    background-color: black;
+    text-align: center;
+    border: 2px solid white;
+    height: 900px;
+    color:white;
+    justify-content: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size:large;
+    font-style: italic;
+}
+.Main h2{
+    text-align:center;
+    margin:5px;
+}
+.Main input{
+    margin: 20px;
+    border-radius: 10px;
+    height: 20px;
+    width:180px;
+}
+.Main button{
+    background-color: rgb(18, 198, 24); 
+}
+.Main button a{
+    color: white;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: x-large;
+}
+    </style>
+    <title>ContactPage</title>
+</head>
+<body>
+    <div class="Main">
+    <h1>Contact Us</h1>
+    <h4>Please fill this form in a decent manner</h4>
+    <h2>Full Name*</h2>
+    <b>First Name:</b><input type="text" >
+    <b>Middle Name:</b><input type="text" >
+    <b>Last Name:</b><input type="text" >
+
+    <h2>Contact Number*</h2>
+    <input type="textarea">
+    
+    <h2>E-Mail</h2>
+    <input type="textarea">
+    
+    <h2>Message*</h2>
+    <textarea class="textarea"></textarea><br><br>
+ 
+    <button><a href="Submit">Submit</a></button>
+    </div>
+    //Using JavaScript set the Data in Backend
+    <script src="Contact.js">
+       var Myname=document.querySelectorById(".username");
+var mynumber=document.querySelectorById(".usercontactnumber");
+var Myemail=document.querySelectorById(".userE-mail");
+var MyMessage=document.querySelectorById(".userMessage");
+var Mybutton=document.querySelectorById("button");
+button.addEventListener( ":click",() => {
+   
+        var obj = {
+        name:Myname.value,
+        number:mynumber.value,
+        email:Myemail.value,
+        message:MyMessage.value,
+
+        };
+});
+fetch("/index",{
+method:'POST',
+headers:{'Contact-Type': 'applicatio/json'},
+body:JSON.stringify("obj")
+})
+ 
+          
+    </script>
+</body>
+</html>
